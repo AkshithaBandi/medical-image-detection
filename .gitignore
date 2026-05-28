@@ -1,0 +1,30 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Model files
+*.h5
+
+# Database
+*.db
+
+# Reports
+backend/reports/
+backend/heatmaps/
+
+# Frontend
+node_modules/
+dist/
+
+# Environment
+.env
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+*.h5
