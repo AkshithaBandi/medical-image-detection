@@ -1,4 +1,5 @@
 from fastapi import APIRouter, File, UploadFile, Form
+import download_model
 from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
@@ -6,7 +7,6 @@ import io
 import uuid
 import cv2
 import os
-import download_model
 
 from utils.gradcam import make_gradcam_heatmap
 from utils.report_generator import generate_medical_report
