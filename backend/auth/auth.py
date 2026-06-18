@@ -37,6 +37,20 @@ def register(user: RegisterUser):
             status_code=400,
             detail="User already exists"
         )
+    
+    # Check existing username
+    cursor.execute(
+        "SELECT * FROM users WHERE username=?",
+        (user.username,)
+        )
+    
+    existing_username = cursor.fetchone()
+    
+    if existing_username:
+        raise HTTPException(
+            status_code=400,
+            detail="Username already taken"
+            )
 
     hashed_password = hash_password(user.password)
 
